@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    alfredo (0.1.2)
+      nokogiri
+    nokogiri (1.5.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  alfredo
+  nokogiri
