@@ -36,6 +36,7 @@ end
 # console_log(filtered_settings.join(","))
 
 workflow = Alfredo::Workflow.new
+workflow << Alfredo::Item.new(:title => "Default", :subtitle => "Open Default Terminal", :icon_path => "public.folder", :icon_type => "filetype")  
 filtered_settings.each do |setting|
   workflow << Alfredo::Item.new(:arg => setting, :title => setting, :subtitle => "Open '#{setting}' Terminal", :icon_path => "public.folder", :icon_type => "filetype")  
 end
