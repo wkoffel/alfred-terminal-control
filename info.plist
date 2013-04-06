@@ -6,11 +6,60 @@
 	<string>org.koffel.alfred.terminal-control</string>
 	<key>connections</key>
 	<dict>
+		<key>65B157BF-3FD5-42C4-B1CD-6ED506FDC3CF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0E73254A-8251-44E8-B1EE-4F5C3805677B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>DB0E6D6F-D508-4850-99B8-CAA1885811D3</string>
+				<string>6018FDB8-D982-41A7-8C29-47C540CA9A6D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>423D3BFF-5DF9-4367-BD69-7B81FDD4D549</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Apply Settings to Selected Tab</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4FA069EF-B704-4779-B545-2725B695A78B</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Open In New Tab</string>
+			</dict>
+		</array>
+		<key>9B15D188-CB9E-4A9D-8A82-678A02610F76</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9AC92AAE-5AF1-482D-AA37-592BA0457559</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E0DAB0F3-F896-4812-83F0-A40CE20716AF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3993EBC0-A4D7-4D1D-B483-77DEA279D31B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -31,17 +80,56 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>term merge</string>
+				<key>text</key>
+				<string>Merge All Terminal Windows</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>65B157BF-3FD5-42C4-B1CD-6ED506FDC3CF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
-				<integer>62</integer>
+				<integer>63</integer>
 				<key>script</key>
-				<string>set mySetting to "{query}"tell application "Terminal"	set current settings of (do script) to settings set mySetting	activateend tell</string>
+				<string>set script_path to ":script:utils.scpt"
+set utils to load script alias script_path
+enable_ui_scripting() of utils
+tell application "Terminal"	activate
+	menu_click({"Terminal", "Window", "Move Tab to New Window"}) of utils
+end tell</string>
 				<key>type</key>
 				<integer>6</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.script</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>DB0E6D6F-D508-4850-99B8-CAA1885811D3</string>
+			<string>3993EBC0-A4D7-4D1D-B483-77DEA279D31B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>term move</string>
+				<key>text</key>
+				<string>Move Terminal to Separate WIndow</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E0DAB0F3-F896-4812-83F0-A40CE20716AF</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -53,7 +141,7 @@
 				<key>keyword</key>
 				<string>term</string>
 				<key>runningsubtext</key>
-				<string>Terminal Control Loading...</string>
+				<string>Loading...</string>
 				<key>script</key>
 				<string>ruby terminal-control.rb {query}
 </string>
@@ -71,20 +159,203 @@
 			<key>uid</key>
 			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<true/>
+				<key>keyword</key>
+				<string>term dir</string>
+				<key>scopes</key>
+				<array/>
+				<key>subtext</key>
+				<string>Type to select directory...</string>
+				<key>title</key>
+				<string>New Terminal at Directory</string>
+				<key>types</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>9B15D188-CB9E-4A9D-8A82-678A02610F76</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cd '{query}'</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>9AC92AAE-5AF1-482D-AA37-592BA0457559</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set desiredSettings to "{query}"tell application "Terminal"	set frontTab to selected tab in window 1	set current settings of frontTab to settings set desiredSettingsend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>423D3BFF-5DF9-4367-BD69-7B81FDD4D549</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set script_path to ":script:utils.scpt"
+set utils to load script alias script_path
+enable_ui_scripting() of utils
+set mySetting to "{query}"tell application "Terminal"	activate
+	menu_click({"Terminal", "Shell", "New Window", mySetting}) of utils
+end tell
+</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6018FDB8-D982-41A7-8C29-47C540CA9A6D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set script_path to ":script:utils.scpt"
+set utils to load script alias script_path
+enable_ui_scripting() of utils
+set myTabSetting to "{query}"tell application "Terminal"	activate	menu_click({"Terminal", "Shell", "New Tab", myTabSetting}) of utilsend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4FA069EF-B704-4779-B545-2725B695A78B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>set script_path to ":script:utils.scpt"
+set utils to load script alias script_path
+enable_ui_scripting() of utils
+tell application "Terminal"	activate
+	menu_click({"Terminal", "Window", "Merge All Windows"}) of utils
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0E73254A-8251-44E8-B1EE-4F5C3805677B</string>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0E73254A-8251-44E8-B1EE-4F5C3805677B</key>
+		<dict>
+			<key>ypos</key>
+			<real>450</real>
+		</dict>
+		<key>3993EBC0-A4D7-4D1D-B483-77DEA279D31B</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>423D3BFF-5DF9-4367-BD69-7B81FDD4D549</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>4FA069EF-B704-4779-B545-2725B695A78B</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>6018FDB8-D982-41A7-8C29-47C540CA9A6D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>65B157BF-3FD5-42C4-B1CD-6ED506FDC3CF</key>
+		<dict>
+			<key>ypos</key>
+			<real>450</real>
+		</dict>
 		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
 		<dict>
 			<key>ypos</key>
-			<real>70</real>
+			<real>120</real>
 		</dict>
-		<key>DB0E6D6F-D508-4850-99B8-CAA1885811D3</key>
+		<key>9AC92AAE-5AF1-482D-AA37-592BA0457559</key>
 		<dict>
 			<key>ypos</key>
-			<real>70</real>
+			<real>570</real>
+		</dict>
+		<key>9B15D188-CB9E-4A9D-8A82-678A02610F76</key>
+		<dict>
+			<key>ypos</key>
+			<real>570</real>
+		</dict>
+		<key>E0DAB0F3-F896-4812-83F0-A40CE20716AF</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
