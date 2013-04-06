@@ -1,7 +1,6 @@
 require 'rubygems' unless defined? Gem
-require 'bundler/setup'
+require './bundle/bundler/setup'
 require "alfredo"
-#require 'ap'
 
 def console_log(msg)
   escape = proc{ |m| m.gsub("'", "'\\\\''") }
