@@ -253,7 +253,11 @@ end tell</string>
 set utils to load script alias script_path
 enable_ui_scripting() of utils
 set mySetting to "{query}"tell application "Terminal"	activate
-	menu_click({"Terminal", "Shell", "New Window", mySetting}) of utils
+	if(contents of mySetting is not "")
+		menu_click({"Terminal", "Shell", "New Window", mySetting}) of utils
+	else
+		do script
+	end
 end tell
 </string>
 				<key>type</key>
@@ -273,7 +277,10 @@ end tell
 				<string>set script_path to ":script:utils.scpt"
 set utils to load script alias script_path
 enable_ui_scripting() of utils
-set myTabSetting to "{query}"tell application "Terminal"	activate	menu_click({"Terminal", "Shell", "New Tab", myTabSetting}) of utilsend tell</string>
+set myTabSetting to "{query}"tell application "Terminal"	activate	if(contents of myTabSetting is not "")		menu_click({"Terminal", "Shell", "New Tab", myTabSetting}) of utils
+	else
+		menu_click({"Terminal", "Shell", "New Tab"}) of utils
+	endend tell</string>
 				<key>type</key>
 				<integer>6</integer>
 			</dict>

@@ -15,9 +15,14 @@ term_settings = `osascript << EOF
 
 tell application "Terminal"
 	set theSettings to settings sets
+	set defaultSettings to default settings
 	set output to ""
 	repeat with aSetting in theSettings
-		set output to output & (name of aSetting) & ","
+		if (name of aSetting) is equal to (name of defaultSettings) then
+			set output to output & (name of aSetting) & " (Default),"
+		else
+			set output to output & (name of aSetting) & ","
+		end if
 	end repeat
 end tell
 
@@ -25,8 +30,7 @@ EOF`
 
 term_settings = term_settings.split(",")
 term_settings = term_settings.reject { |line| line == "\n" }
-
-
+  
 # Now search for matching items to the query
 filtered_settings = term_settings.select do |setting_name|
   setting_name.match(/#{args}/i)
@@ -35,8 +39,11 @@ end
 # console_log(filtered_settings.join(","))
 
 workflow = Alfredo::Workflow.new
-workflow << Alfredo::Item.new(:title => "Default", :subtitle => "Open Default Terminal", :icon_path => "public.folder", :icon_type => "filetype")  
 filtered_settings.each do |setting|
-  workflow << Alfredo::Item.new(:arg => setting, :title => setting, :subtitle => "Open '#{setting}' Terminal", :icon_path => "public.folder", :icon_type => "filetype")  
+  display_setting = setting
+  if(match = setting.match(/(.*) \(Default\)/))
+    setting = match[1]
+  end
+  workflow << Alfredo::Item.new(:arg => setting, :title => display_setting, :subtitle => "Open '#{setting}' Terminal", :icon_path => "icon.png")  
 end
 workflow.output!
