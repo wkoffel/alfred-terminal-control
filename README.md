@@ -17,7 +17,7 @@ Modifier keys:
 
 ### Merge and Split
 
-Keyword trigger *term move* will separate the current tab into its own window.
+Keyword trigger ( *term move* ) will separate the current tab into its own window.
 ![Screenshot: Move Terminal Tab to New Window](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/term-move.png "Move Terminal Tab to New Window")
 
 Keyword trigger "*term merge*" will merge all open Terminal windows into one tabbed set.
