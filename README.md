@@ -7,7 +7,7 @@ An [Alfred](http://www.alfredapp.com/ "Alfred App") workflow for controlling asp
 
 ### New Terminals
 
-The keyword trigger *term* will bring up a list of Profiles (themes/skins) based on Terminal preferences.  Continue typing to select one.
+The keyword trigger " *term* " will bring up a list of Profiles (themes/skins) based on Terminal preferences.  Continue typing to select one.
 
 ![Screenshot: Launch New Terminal](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/new-term.png "New Terminal")
 
@@ -17,15 +17,15 @@ Modifier keys:
 
 ### Merge and Split
 
-Keyword trigger ( *term move* ) will separate the current tab into its own window.
+Keyword trigger " *term move* " will separate the current tab into its own window.
 ![Screenshot: Move Terminal Tab to New Window](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/term-move.png "Move Terminal Tab to New Window")
 
-Keyword trigger "*term merge*" will merge all open Terminal windows into one tabbed set.
+Keyword trigger " *term merge* " will merge all open Terminal windows into one tabbed set.
 ![Screenshot: Merge Terminal Windows](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/term-merge.png "Merge Terminal Windows")
 
 
 ### Terminal to a Directory
 
-Keyword trigger "*term dir*", followed by a directory search phrase will launch the default Terminal profile, and automatically change to the selected directory.
+Keyword trigger " *term dir* ", followed by a directory search phrase will launch the default Terminal profile, and automatically change to the selected directory.
 
 ![Screenshot: Launch Terminal at Directory](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/term-dir.png "Launch Terminal at Directory")
