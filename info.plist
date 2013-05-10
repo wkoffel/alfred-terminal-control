@@ -80,19 +80,91 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>term merge</string>
-				<key>text</key>
-				<string>Merge All Terminal Windows</string>
-				<key>withspace</key>
-				<false/>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set script_path to ":script:utils.scpt"
+set utils to load script alias script_path
+enable_ui_scripting() of utils
+set mySetting to "{query}"tell application "Terminal"	activate
+	if(contents of mySetting is not "")
+		menu_click({"Terminal", "Shell", "New Window", mySetting}) of utils
+	else
+		do script
+	end
+end tell
+</string>
+				<key>type</key>
+				<integer>6</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>65B157BF-3FD5-42C4-B1CD-6ED506FDC3CF</string>
+			<string>6018FDB8-D982-41A7-8C29-47C540CA9A6D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>term</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby terminal-control.rb {query}
+</string>
+				<key>subtext</key>
+				<string>Apple Terminal Control Functions</string>
+				<key>title</key>
+				<string>Terminal Control</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set desiredSettings to "{query}"tell application "Terminal"	set frontTab to selected tab in window 1	set current settings of frontTab to settings set desiredSettingsend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>423D3BFF-5DF9-4367-BD69-7B81FDD4D549</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set script_path to ":script:utils.scpt"
+set utils to load script alias script_path
+enable_ui_scripting() of utils
+set myTabSetting to "{query}"tell application "Terminal"	activate	if(contents of myTabSetting is not "")		menu_click({"Terminal", "Shell", "New Tab", myTabSetting}) of utils
+	else
+		menu_click({"Terminal", "Shell", "New Tab"}) of utils
+	endend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4FA069EF-B704-4779-B545-2725B695A78B</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -135,29 +207,38 @@ end tell</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>63</integer>
+				<integer>2</integer>
 				<key>keyword</key>
-				<string>term</string>
-				<key>runningsubtext</key>
-				<string>Loading...</string>
-				<key>script</key>
-				<string>ruby terminal-control.rb {query}
-</string>
-				<key>subtext</key>
-				<string>Apple Terminal Control Functions</string>
-				<key>title</key>
-				<string>Terminal Control</string>
-				<key>type</key>
-				<integer>0</integer>
+				<string>term merge</string>
+				<key>text</key>
+				<string>Merge All Terminal Windows</string>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
+			<string>65B157BF-3FD5-42C4-B1CD-6ED506FDC3CF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>set script_path to ":script:utils.scpt"
+set utils to load script alias script_path
+enable_ui_scripting() of utils
+tell application "Terminal"	activate
+	menu_click({"Terminal", "Window", "Merge All Windows"}) of utils
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0E73254A-8251-44E8-B1EE-4F5C3805677B</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -227,87 +308,6 @@ end tell</string>
 			<string>alfred.workflow.action.terminalcommand</string>
 			<key>uid</key>
 			<string>9AC92AAE-5AF1-482D-AA37-592BA0457559</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>4</integer>
-				<key>script</key>
-				<string>set desiredSettings to "{query}"tell application "Terminal"	set frontTab to selected tab in window 1	set current settings of frontTab to settings set desiredSettingsend tell</string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>423D3BFF-5DF9-4367-BD69-7B81FDD4D549</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>4</integer>
-				<key>script</key>
-				<string>set script_path to ":script:utils.scpt"
-set utils to load script alias script_path
-enable_ui_scripting() of utils
-set mySetting to "{query}"tell application "Terminal"	activate
-	if(contents of mySetting is not "")
-		menu_click({"Terminal", "Shell", "New Window", mySetting}) of utils
-	else
-		do script
-	end
-end tell
-</string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>6018FDB8-D982-41A7-8C29-47C540CA9A6D</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>4</integer>
-				<key>script</key>
-				<string>set script_path to ":script:utils.scpt"
-set utils to load script alias script_path
-enable_ui_scripting() of utils
-set myTabSetting to "{query}"tell application "Terminal"	activate	if(contents of myTabSetting is not "")		menu_click({"Terminal", "Shell", "New Tab", myTabSetting}) of utils
-	else
-		menu_click({"Terminal", "Shell", "New Tab"}) of utils
-	endend tell</string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>4FA069EF-B704-4779-B545-2725B695A78B</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>script</key>
-				<string>set script_path to ":script:utils.scpt"
-set utils to load script alias script_path
-enable_ui_scripting() of utils
-tell application "Terminal"	activate
-	menu_click({"Terminal", "Window", "Merge All Windows"}) of utils
-end tell</string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>0E73254A-8251-44E8-B1EE-4F5C3805677B</string>
 		</dict>
 	</array>
 	<key>readme</key>
