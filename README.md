@@ -17,16 +17,18 @@ Modifier keys:
 
 ### Merge and Split
 
-Keyword trigger *term move* will separate the current tab into its own window.
+**Terminal only:** Keyword trigger *term move* will separate the current tab into its own window.
 ![Screenshot: Move Terminal Tab to New Window](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/term-move.png "Move Terminal Tab to New Window")
 
-Keyword trigger *term merge* will merge all open Terminal windows into one tabbed set.
+**Terminal only:** Keyword trigger *term merge* will merge all open Terminal windows into one tabbed set.
 ![Screenshot: Merge Terminal Windows](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/term-merge.png "Merge Terminal Windows")
 
+**iTerm only:** Keyword trigger *iterm arrange* will call iTerm's "arrange all windows horizontally" window helper.
+![Screenshot: Arrange iTerm Windows](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/iterm-arrange.png "Arrange iTerm Windows Horizontally")
 
 ### Terminal to a Directory
 
-Keyword trigger *term dir*, followed by a directory search phrase will launch the default Terminal profile, and automatically change to the selected directory.
+Keyword trigger *term dir* (or *iterm dir*), followed by a directory search phrase will launch the default Terminal profile, and automatically change to the selected directory.
 
 ![Screenshot: Launch Terminal at Directory](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/term-dir.png "Launch Terminal at Directory")
 
@@ -40,11 +42,15 @@ Visit the repository for the full source code at https://github.com/wkoffel/alfr
 
 In theory, I've bundled all the necessary ruby gems in the workflow package proper, so it should be a simple double-click install.  If you do need to install manually, please let me know.  To install manual dependencies, you would run just "sudo gem install alfredo", and that should suffice.
 
-#### Release Notes
-
-* v1.0 - Initial release
-* v1.1 - Support for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater") workflow updater
-
 #### Credits
 
 Thanks to Bryan McKelvey for the simple [Alfredo Gem](https://github.com/brymck/alfredo "Alfredo Ruby Gem")
+Thanks to phyllisstein for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater")
+Thanks to Quentin Stafford-Fraser for inspiration and approach in his dedicated [iTerm2 Profiles](http://qandr.org/quentin/software/alfred_itp "alfred_itp") workflow
+
+#### Release Notes
+
+* v1.0 (May 6, 2013) - Initial release
+* v1.1 (May 10, 2013) - Support for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater") workflow updater
+* v2.0 (May ?, 2013) - Support for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater") workflow updater
+

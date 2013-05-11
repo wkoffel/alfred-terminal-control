@@ -6,6 +6,28 @@
 	<string>org.koffel.alfred.terminal-control</string>
 	<key>connections</key>
 	<dict>
+		<key>1A9F2419-74EB-4A6F-8C61-EA7AEA75EA3D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>709458DB-2337-49C5-8916-0C14E4CD098B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>51C520DD-1049-48C6-9B6E-A38F26F2F64B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>323A3BD5-47A2-43B5-9EBB-A0A8FF7CC263</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>65B157BF-3FD5-42C4-B1CD-6ED506FDC3CF</key>
 		<array>
 			<dict>
@@ -66,11 +88,22 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>FBBBF646-CDE1-4CB0-9678-EA5F7942063A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>27F11DBA-8BFD-4D9F-9FAF-73C47F548F08</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Will Koffel</string>
 	<key>description</key>
-	<string>Apple Terminal Control Functions</string>
+	<string>Terminal Control Functions</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -105,6 +138,21 @@ end tell
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set desiredSettings to "{query}"tell application "Terminal"	set frontTab to selected tab in window 1	set current settings of frontTab to settings set desiredSettingsend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>423D3BFF-5DF9-4367-BD69-7B81FDD4D549</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -112,7 +160,7 @@ end tell
 				<key>keyword</key>
 				<string>term</string>
 				<key>runningsubtext</key>
-				<string>Loading...</string>
+				<string>Loading Profiles...</string>
 				<key>script</key>
 				<string>ruby terminal-control.rb {query}
 </string>
@@ -129,21 +177,6 @@ end tell
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>4</integer>
-				<key>script</key>
-				<string>set desiredSettings to "{query}"tell application "Terminal"	set frontTab to selected tab in window 1	set current settings of frontTab to settings set desiredSettingsend tell</string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>423D3BFF-5DF9-4367-BD69-7B81FDD4D549</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -206,23 +239,6 @@ end tell</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>term merge</string>
-				<key>text</key>
-				<string>Merge All Terminal Windows</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>65B157BF-3FD5-42C4-B1CD-6ED506FDC3CF</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
@@ -239,6 +255,23 @@ end tell</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>0E73254A-8251-44E8-B1EE-4F5C3805677B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>term merge</string>
+				<key>text</key>
+				<string>Merge All Terminal Windows</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>65B157BF-3FD5-42C4-B1CD-6ED506FDC3CF</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -309,6 +342,166 @@ end tell</string>
 			<key>uid</key>
 			<string>9AC92AAE-5AF1-482D-AA37-592BA0457559</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set desiredSettings to "{query}"
+tell application "iTerm"
+	activate
+	tell (make new terminal)
+    		launch session desiredSettings
+	end tell
+end tell
+</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>323A3BD5-47A2-43B5-9EBB-A0A8FF7CC263</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>iterm</string>
+				<key>runningsubtext</key>
+				<string>Loading Profiles...</string>
+				<key>script</key>
+				<string>ruby iterm2-control.rb {query}</string>
+				<key>subtext</key>
+				<string>iTerm2 Control Functions</string>
+				<key>title</key>
+				<string>Terminal Control</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>51C520DD-1049-48C6-9B6E-A38F26F2F64B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>iterm dir</string>
+				<key>scopes</key>
+				<array/>
+				<key>subtext</key>
+				<string>Type to select directory...</string>
+				<key>title</key>
+				<string>New iTerm at Directory</string>
+				<key>types</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>1A9F2419-74EB-4A6F-8C61-EA7AEA75EA3D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set directory to "{query}"
+tell application "iTerm"	activate	set myterm to (make new terminal)	tell myterm		set mysession to (launch session "Default Session")		tell mysession			write text "cd " &amp; directory		end tell	end tellend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>709458DB-2337-49C5-8916-0C14E4CD098B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set script_path to ":script:utils.scpt"
+set utils to load script alias script_path
+enable_ui_scripting() of utils
+tell application "iTerm"	activate
+	menu_click({"iTerm", "Window", "Arrange Windows Horizontally"}) of utils
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>27F11DBA-8BFD-4D9F-9FAF-73C47F548F08</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>iterm arrange</string>
+				<key>subtext</key>
+				<string>Arrange iTerm Windows Horizontally</string>
+				<key>text</key>
+				<string>iTerm Arrange</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FBBBF646-CDE1-4CB0-9678-EA5F7942063A</string>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -318,6 +511,21 @@ end tell</string>
 		<dict>
 			<key>ypos</key>
 			<real>450</real>
+		</dict>
+		<key>1A9F2419-74EB-4A6F-8C61-EA7AEA75EA3D</key>
+		<dict>
+			<key>ypos</key>
+			<real>810</real>
+		</dict>
+		<key>27F11DBA-8BFD-4D9F-9FAF-73C47F548F08</key>
+		<dict>
+			<key>ypos</key>
+			<real>930</real>
+		</dict>
+		<key>323A3BD5-47A2-43B5-9EBB-A0A8FF7CC263</key>
+		<dict>
+			<key>ypos</key>
+			<real>690</real>
 		</dict>
 		<key>3993EBC0-A4D7-4D1D-B483-77DEA279D31B</key>
 		<dict>
@@ -334,6 +542,11 @@ end tell</string>
 			<key>ypos</key>
 			<real>230</real>
 		</dict>
+		<key>51C520DD-1049-48C6-9B6E-A38F26F2F64B</key>
+		<dict>
+			<key>ypos</key>
+			<real>690</real>
+		</dict>
 		<key>6018FDB8-D982-41A7-8C29-47C540CA9A6D</key>
 		<dict>
 			<key>ypos</key>
@@ -348,6 +561,11 @@ end tell</string>
 		<dict>
 			<key>ypos</key>
 			<real>120</real>
+		</dict>
+		<key>709458DB-2337-49C5-8916-0C14E4CD098B</key>
+		<dict>
+			<key>ypos</key>
+			<real>810</real>
 		</dict>
 		<key>9AC92AAE-5AF1-482D-AA37-592BA0457559</key>
 		<dict>
@@ -364,8 +582,13 @@ end tell</string>
 			<key>ypos</key>
 			<real>340</real>
 		</dict>
+		<key>FBBBF646-CDE1-4CB0-9678-EA5F7942063A</key>
+		<dict>
+			<key>ypos</key>
+			<real>930</real>
+		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>will.koffel.org/alfred</string>
+	<string>https://github.com/wkoffel/alfred-terminal-control</string>
 </dict>
 </plist>
