@@ -40,6 +40,11 @@ Visit the repository for the full source code at https://github.com/wkoffel/alfr
 
 In theory, I've bundled all the necessary ruby gems in the workflow package proper, so it should be a simple double-click install.  If you do need to install manually, please let me know.  To install manual dependencies, you would run just "sudo gem install alfredo", and that should suffice.
 
+#### Release Notes
+
+* v1.0 - Initial release
+* v1.1 - Support for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater") workflow updater
+
 #### Credits
 
 Thanks to Bryan McKelvey for the simple [Alfredo Gem](https://github.com/brymck/alfredo "Alfredo Ruby Gem")
