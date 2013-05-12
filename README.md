@@ -52,5 +52,5 @@ Thanks to Quentin Stafford-Fraser for inspiration and approach in his dedicated 
 
 * v1.0 (May 6, 2013) - Initial release
 * v1.1 (May 10, 2013) - Support for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater") workflow updater
-* v2.0 (May ?, 2013) - Support for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater") workflow updater
+* v2.0 (May 12, 2013) - Added control for the popular alternative [iTerm2](http://www.iterm2.com/ "iTerm2") Terminal emulator
 
