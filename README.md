@@ -13,7 +13,7 @@ The keyword trigger *term* will bring up a list of Profiles (themes/skins) based
 
 Modifier keys:
 * **Shift**: launch this Profile in a new tab
-* **Command**: change the active Terminal tab to this Profile
+* **Command**: change the active Terminal tab to this Profile (Not available for iTerm2)
 
 ### Merge and Split
 
@@ -23,7 +23,7 @@ Modifier keys:
 **Terminal only:** Keyword trigger *term merge* will merge all open Terminal windows into one tabbed set.
 ![Screenshot: Merge Terminal Windows](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/term-merge.png "Merge Terminal Windows")
 
-**iTerm only:** Keyword trigger *iterm arrange* will call iTerm's "arrange all windows horizontally" window helper.
+**iTerm2 only:** Keyword trigger *iterm arrange* will call iTerm's "arrange all windows horizontally" window helper.
 ![Screenshot: Arrange iTerm Windows](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/iterm-arrange.png "Arrange iTerm Windows Horizontally")
 
 ### Terminal to a Directory
