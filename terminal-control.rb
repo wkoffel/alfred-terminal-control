@@ -30,7 +30,7 @@ EOF`
 
 term_settings = term_settings.split(",")
 term_settings = term_settings.reject { |line| line == "\n" }
-  
+
 # Now search for matching items to the query
 filtered_settings = term_settings.select do |setting_name|
   setting_name.match(/#{args}/i)
@@ -42,6 +42,6 @@ filtered_settings.each do |setting|
   if(match = setting.match(/(.*) \(Default\)/))
     setting = match[1]
   end
-  workflow << Alfredo::Item.new(:arg => setting, :title => display_setting, :subtitle => "Open '#{setting}' Terminal", :icon_path => "icon.png")  
+  workflow << Alfredo::Item.new(:arg => setting, :title => display_setting, :subtitle => "Open '#{setting}' Terminal", :icon_path => "icon.png")
 end
 workflow.output!

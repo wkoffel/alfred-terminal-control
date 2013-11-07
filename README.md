@@ -1,6 +1,6 @@
 ## Alfred 2 Terminal Control Workflow
 
-An [Alfred](http://www.alfredapp.com/ "Alfred App") workflow for controlling aspects of Apple's Terminal Utility.  Designed specifically for developers and admins who spend a lot of time in Terminal at the command line.  Particularly useful for those who manage multiple tabs and use varied Profiles (color themes) for Terminal windows.
+An [Alfred](http://www.alfredapp.com/ "Alfred App") workflow for controlling aspects of Apple's Terminal Utility and [iTerm2](http://www.iterm2.com/ "iTerm 2").  Designed specifically for developers and admins who spend a lot of time in terminals at the command line.  Particularly useful for those who manage multiple tabs and use varied Profiles (color themes) for Terminal/iTerm2 windows.
 
 ![Screenshot: Alred Workflow Topology](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/workflow.png "Workflow Topology")
 
