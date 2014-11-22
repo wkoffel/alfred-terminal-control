@@ -1,5 +1,5 @@
 {
-    "version": 2.1,
-    "download_url": "http://cl.ly/3Z0y1A2T151K/download/TerminalControl-v2_1.alfredworkflow",
-    "description": "Added Mavericks OS X 10.9 Support"
+    "version": 2.2,
+    "download_url": "http://cl.ly/3q153D3V160Z/download/TerminalControl-v2_2.alfredworkflow",
+    "description": "Improved UI Scripting Dialog behavior for new users on OS X 10.9+"
 }

@@ -53,4 +53,6 @@ Thanks to Quentin Stafford-Fraser for inspiration and approach in his dedicated 
 * v1.0 (May 6, 2013) - Initial release
 * v1.1 (May 10, 2013) - Support for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater") workflow updater
 * v2.0 (May 12, 2013) - Added control for the popular alternative [iTerm2](http://www.iterm2.com/ "iTerm2") Terminal emulator
+* v2.1 (Nov 7, 2013) - Included bundled gems for ruby 2.0.0 for Mavericks OS X 10.9 Support
+* v2.2 (Nov 21, 2014) - Improved UI scripting dialog to conform with 10.9+ privacy behaviors
 
