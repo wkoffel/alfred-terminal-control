@@ -1,5 +1,5 @@
 {
-    "version": 2.2,
+    "version": 2.3,
     "download_url": "http://cl.ly/3q153D3V160Z/download/TerminalControl-v2_2.alfredworkflow",
-    "description": "Improved UI Scripting Dialog behavior for new users on OS X 10.9+"
+    "description": "Support for iTerm2 3.0.0+"
 }
