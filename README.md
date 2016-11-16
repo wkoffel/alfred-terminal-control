@@ -39,6 +39,8 @@ I spend a lot of time connected to various processes, machines, networks, runnin
 Download the latest compiled workflow directly from
 https://github.com/wkoffel/alfred-terminal-control/tree/master/dist
 
+![Screenshot: Download Workflow](https://raw.github.com/wkoffel/alfred-terminal-control/master/screenshots/download.png "Download Workflow")
+
 Visit the repository for the full source code at https://github.com/wkoffel/alfred-terminal-control
 
 In theory, I've bundled all the necessary ruby gems in the workflow package proper, so it should be a simple double-click install.  If you do need to install manually, please let me know.  To install manual dependencies, you would run just "sudo gem install alfredo", and that should suffice.
