@@ -36,7 +36,7 @@ Keyword trigger *term dir* (or *iterm dir*), followed by a directory search phra
 I spend a lot of time connected to various processes, machines, networks, running screen/tmux sessions, etc.  From my personal experience (read: typing the wrong command into an ssh session of a production machine and taking down large consumer web properties in the process), I've built a habit of always color-coding my terminal windows.  White on black for local OSX terminal.  Green on black for local virtual machines, green background for testing networks, and RED background for production machines (a constant reminder to be careful what I type).  This alfred workflow allows me to launch terminal themes, and also change a terminal tab quickly to a new theme if I repurpose it for a new task.
 
 #### Install Notes
-Download the compiled workflow directly at https://github.com/wkoffel/alfred-terminal-control/raw/master/alfredworkflow/Terminal%20Control.alfredworkflow
+Download the compiled workflow directly at http://cl.ly/032Q1X0l0S0W/download/TerminalControl-v2_3.alfredworkflow
 
 Visit the repository for the full source code at https://github.com/wkoffel/alfred-terminal-control
 
