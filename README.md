@@ -59,3 +59,4 @@ Thanks to Quentin Stafford-Fraser for inspiration and approach in his dedicated 
 * v2.1 (Nov 7, 2013) - Included bundled gems for ruby 2.0.0 for Mavericks OS X 10.9 Support
 * v2.2 (Nov 21, 2014) - Improved UI scripting dialog to conform with 10.9+ privacy behaviors
 * v2.3 (Jun 23, 2016) - Support for iTerm2 version 3.0.0+ to accommodate their new AppleScript dictionaries
+* v2.4 (Oct 15, 2017) - Included bundled gems for ruby 2.3.0 for macOS High Sierra 10.13 Support
