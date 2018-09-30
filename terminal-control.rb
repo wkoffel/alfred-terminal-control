@@ -1,6 +1,6 @@
 Encoding.default_external = Encoding::UTF_8
 require 'rubygems' unless defined? Gem
-require 'bundler/setup'
+require './bundle/bundler/setup'
 require "alfredo"
 
 def console_log(msg)
