@@ -1,7 +1,7 @@
 require 'rubygems' unless defined? Gem
 require './bundle/bundler/setup'
-require "alfredo"
 require "cfpropertylist"
+require "./alfred-helper"
 
 def console_log(msg)
   escape = proc{ |m| m.gsub("'", "'\\\\''") }
@@ -21,12 +21,12 @@ filtered_settings = term_settings.select do |setting_name|
   setting_name.match(/#{args}/i)
 end
 
-workflow = Alfredo::Workflow.new
+workflow = Alfred::Workflow.new
 filtered_settings.each do |setting|
   display_setting = setting
   if(match = setting.match(/(.*) \(Default\)/))
     setting = match[1]
   end
-  workflow << Alfredo::Item.new(:arg => setting, :title => display_setting, :subtitle => "Open '#{setting}' iTerm2", :icon_path => "icon.png")  
+  workflow << Alfred::Item.new(:arg => setting, :title => display_setting, :subtitle => "Open '#{setting}' iTerm2", :icon_path => "icon.png")
 end
 workflow.output!

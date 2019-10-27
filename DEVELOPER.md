@@ -4,6 +4,8 @@ This should be all irrelevant as an end-user.  See README.md for all the usage i
 
 ## Rebuilding for new versions of Mac OS X
 
+> Since v2.6 (Oct 2019), this has gotten easier, with the switch to Alfred JSON format, and the removal of the alfredo/nokogiri dependency. Instructions below will be updated in 2020 when we see what the process is for an OS upgrade.
+
 1. Install bundler for latest system ruby.  `sudo gem install bundler`
 
 2. Ensure latest gems are in place.  This is generally the tricky part with OS upgrades.

@@ -47,7 +47,7 @@ In theory, I've bundled all the necessary ruby gems in the workflow package prop
 
 #### Credits
 
-Thanks to Bryan McKelvey for the simple [Alfredo Gem](https://github.com/brymck/alfredo "Alfredo Ruby Gem")
+Thanks to Bryan McKelvey for the simple [Alfredo Gem](https://github.com/brymck/alfredo "Alfredo Ruby Gem") (no longer used, but still influential)
 Thanks to phyllisstein for [Alleyoop](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/ "Alleyoop Workflow Updater")
 Thanks to Quentin Stafford-Fraser for inspiration and approach in his dedicated [iTerm2 Profiles](http://qandr.org/quentin/software/alfred_itp "alfred_itp") workflow
 
@@ -61,3 +61,4 @@ Thanks to Quentin Stafford-Fraser for inspiration and approach in his dedicated 
 * v2.3 (Jun 23, 2016) - Support for iTerm2 version 3.0.0+ to accommodate their new AppleScript dictionaries
 * v2.4 (Oct 15, 2017) - Included bundled gems for ruby 2.3.0 for macOS High Sierra 10.13 Support
 * v2.5 (Sep 29, 2018) - macOS Mojave 10.14 Support
+* v2.6 (Oct 27, 2019) - Removed alfredo and nokogiri dependencies, moved to Alfred JSON format, macOS Catalina 10.15 Support. Requires Alfred 3+
