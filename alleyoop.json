@@ -1,5 +1,5 @@
 {
-    "version": 2.5,
-    "download_url": "https://cl.ly/f5d7fa56f2b8/download/TerminalControl-v2_5.alfredworkflow",
-    "description": "macOS Mojave 10.14 Support"
+    "version": 2.6,
+    "download_url": "https://cl.ly/ca5cecafeb6e/download/TerminalControl-v2_6.alfredworkflow",
+    "description": "macOS Catalina 10.15 Support, requires Alfred 3+"
 }
