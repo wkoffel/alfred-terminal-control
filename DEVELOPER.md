@@ -12,7 +12,7 @@ This should be all irrelevant as an end-user.  See README.md for all the usage i
   - Try to `bundle install --standalone` in the development directory.  Potentially, nokogiri will complain.  Try to get it working through hand-wavey magic.  It's getting harder and harder with each passing version.
   - Failing that, try just copying the `bundle/ruby/<old_version>/gems/` directory over to the latest version (ruby 2.3.0 as of macOS 10.13), and see if that builds.
 
-3. Make sure you are running the system ruby (`rbenv version` = system or equivalent for your ruby version manager), and if you can run `ruby ./terminal-control.rb` and get back XML on stdout, you are likely in good shape.
+3. Make sure you are running the system ruby (`rbenv version` = system or equivalent for your ruby version manager), and if you can run `ruby ./terminal-control.rb` and get back JSON on stdout, you are likely in good shape.
 
 ## Packaging a Release
 
@@ -22,6 +22,7 @@ The order of operations a bit tricky on packaging a new release, because of the 
 2. Temporarily remove old versions from the dist directory (so they don't bloat the new dist)
 3. Update the version number and changelog in `alleyoop.json`
 4. Update the README with changelog.
+4. Update the version number in Alfred Preferences for the bundle.
 5. From Alfred preferences, export to a new `TerminalControl-vx_x` file in `dist/` directory.
 6. Upload *that* file to CloudApp for distribution.
 7. Take the "download link" from CloudApp and put that into the `alleyoop.json` (this will be read from GitHub source by updater)
